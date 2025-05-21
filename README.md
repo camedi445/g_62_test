@@ -16,3 +16,5 @@ flutter pub get
 
 Ejecutar la Aplicación:
 flutter run
+
+se me subio mal, debes ingresar al que se llama g_62_test-main y ahi le das en lib.
