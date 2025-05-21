@@ -1,41 +1,29 @@
-# Taller Práctico Flutter - Pokemon
+# 🚀 Aplicación Pokémon - Refactorizada con MVC y Riverpod
 
-## Descripción
+Este proyecto es una refactorización de una aplicación Flutter para gestionar Pokémon, transformando un código inicial con "malas prácticas" en una arquitectura limpia y modular.
 
-En este repositorio encontrarás una solución que tiene un menú principal con 3 opciones:
+## ✨ Características Principales
 
-1. **Home**: Contiene una lista de personajes de Pokemon con vista detalle.
-2. **Mock**: Pantalla X.
-3. **Mock**: Pantalla X.
+* **Listado de Pokémon**: Muestra Pokémon obtenidos de la PokeAPI.
+* **Detalles del Pokémon**: Permite ver información detallada de cada Pokémon.
+* **Navegación Simple**: Incluye una barra de navegación inferior.
 
-La funcionalidad principal está en la primera opción, donde se implementa una vista de lista-detalle que consume la API pública de Pokemon.
+## 📁 Estructura del Proyecto
 
-## Objetivo del Taller
+La aplicación sigue el patrón Modelo-Vista-Controlador (MVC) y está organizada en las siguientes carpetas para una clara separación de responsabilidades:
 
-Tu trabajo como experto en Flutter es aplicar las mejores prácticas de programación vistas en clase para convertir esta solución en una aplicación escalable y mantenible.
+* **`lib/main.dart`**: Punto de entrada de la aplicación, envuelto en `ProviderScope` de Riverpod.
+* **`models/`**: Contiene `pokemon.dart`, que define la estructura de datos del Pokémon. Incluye un constructor `factory` para parsear JSON (con o sin detalles) y un método `copyWith` para crear nuevas instancias inmutables.
+* **`repositories/`**: Contiene `pokemon_repository.dart`, encargado de la lógica para obtener datos de la PokeAPI. Esto asegura que la fuente de datos pueda cambiarse fácilmente sin afectar otras partes de la app.
+* **`providers/`**: Aquí se gestiona el estado de la aplicación usando Riverpod. Contiene:
+    * Un `Provider` para el `PokemonRepository`.
+    * Un `StateNotifierProvider` con un `PokemonNotifier` que maneja la carga, el estado (cargando, con datos, error) y la lógica para obtener la lista de Pokémon y sus detalles.
+    * Un `StateProvider` para gestionar el índice de la navegación inferior.
+* **`views/`**: Contiene los componentes de la interfaz de usuario. La `home_page.dart` es la vista principal, desacoplada y observando los `providers`. El widget `pokemon_list_item.dart` está separado para mostrar cada Pokémon en la lista.
 
-## Requisitos
+## 🚀 Cómo Ejecutar la Aplicación
 
-Para lograr este objetivo es indispensable que utilices:
-
-- **Riverpod** como gestor de estado
-- El patrón arquitectónico **MVC** (Modelo-Vista-Controlador)
-- Una clara separación de responsabilidades entre las diferentes clases
-
-## Tiempo y Entrega
-
-- Duración de la actividad: **2 horas**
-- Proceso de entrega:
-  1. Crear un Fork del proyect en tú cuenta de Github.
-  2. Crear una rama con tu solución.
-  3. A partir de esta rama, crear un Pull Request a la rama principal
-  4. Incluir en el README una explicación detallada de los aspectos que mejoraste en la aplicación
-
-## Criterios de Evaluación
-
-Se valorará especialmente:
-
-- La correcta implementación del patrón MVC
-- El uso adecuado de Riverpod para la gestión del estado
-- La separación de responsabilidades entre clases
-- La claridad y mantenibilidad del código resultante
+1.  Clona este repositorio a tu máquina local.
+2.  Navega a la carpeta del proyecto en tu terminal.
+3.  Ejecuta `flutter pub get` para instalar las dependencias.
+4.  Ejecuta `flutter run` para iniciar la aplicación.
