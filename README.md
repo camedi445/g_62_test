@@ -15,3 +15,7 @@ implementación de página de detalle
 Go Route
 
 widget main scaffold para manejar barra de navegación
+
+fetch mejorado para más eficiencia
+
+cambios en el manejo de la barra de navegación
