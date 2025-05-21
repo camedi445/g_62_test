@@ -39,3 +39,9 @@ Se valorará especialmente:
 - El uso adecuado de Riverpod para la gestión del estado
 - La separación de responsabilidades entre clases
 - La claridad y mantenibilidad del código resultante
+
+## SOLUCION:
+-se implementa riverpod, se crea un provider para el control de estados.
+-Se modifica estructura para hacer uso de patron MVC donde cada uno de los archivos es responsable de una funcion especifica 
+-Se genera servicio para poder realizar un llamado a la API
+-Se consume servicio por medio del controlador y se muestra en las vistas
