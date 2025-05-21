@@ -1,1 +1,21 @@
+# This file configures the analyzer to use the lint rules from `package:flutter_lints`.
+# For more information, see https://pub.dev/packages/flutter_lints.
+
 include: package:flutter_lints/flutter.yaml
+
+# Additional information about this file can be found at:
+# https://dart.dev/guides/language/analysis-options
+
+analyzer:
+  # ignore:
+  #   - lib/main.dart # Ejemplo: ignora advertencias en este archivo
+  # exclude:
+  #   - path/to/excluded/file.dart # Ejemplo: excluye un archivo del análisis
+  # strong-mode:
+  #   implicit-casts: false # Ejemplo: deshabilitar conversiones implícitas
+
+# Custom lint rules can be added here
+# linter:
+#   rules:
+#     - avoid_print # Ejemplo: advertir sobre el uso de print()
+#     - prefer_const_constructors # Ejemplo: preferir constructores const
