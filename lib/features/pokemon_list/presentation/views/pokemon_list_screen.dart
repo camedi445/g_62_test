@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart'; // Necesario para ConsumerWidget y ref
 
-// Importa el controlador de la lista de Pokémon
-import 'package:pokemon_app/features/pokemon_list/presentation/controllers/pokemon_list_controller.dart';
+// Importa el controlador de la lista de Pokémon, ocultando PokemonDetailNotifier para evitar ambigüedad
+import 'package:pokemon_app/features/pokemon_list/presentation/controllers/pokemon_list_controller.dart' hide PokemonDetailNotifier;
 // Importa el controlador de detalle para poder seleccionar un Pokémon
 import 'package:pokemon_app/features/pokemon_list/presentation/controllers/pokemon_detail_controller.dart';
 // Importa la pantalla de detalle para la navegación
