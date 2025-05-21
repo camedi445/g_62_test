@@ -1,41 +1,9 @@
-# Taller Práctico Flutter - Pokemon
+## Correccion y modificación del codigo 
+El codigo tenía varias malas practicas y en terminos generales estaban desordenados y dificiles de entender. 
+El objetivo principal fue refactorizar el codigo de forma que fuera mas facil de entender que hace cada cosa y que estuvieran bien definidas. Para hacer esto se hicieron 2 cosas:
 
-## Descripción
+## 1. Aplicar Riverpod
+## 2. Aplicar el patrón MVC
 
-En este repositorio encontrarás una solución que tiene un menú principal con 3 opciones:
-
-1. **Home**: Contiene una lista de personajes de Pokemon con vista detalle.
-2. **Mock**: Pantalla X.
-3. **Mock**: Pantalla X.
-
-La funcionalidad principal está en la primera opción, donde se implementa una vista de lista-detalle que consume la API pública de Pokemon.
-
-## Objetivo del Taller
-
-Tu trabajo como experto en Flutter es aplicar las mejores prácticas de programación vistas en clase para convertir esta solución en una aplicación escalable y mantenible.
-
-## Requisitos
-
-Para lograr este objetivo es indispensable que utilices:
-
-- **Riverpod** como gestor de estado
-- El patrón arquitectónico **MVC** (Modelo-Vista-Controlador)
-- Una clara separación de responsabilidades entre las diferentes clases
-
-## Tiempo y Entrega
-
-- Duración de la actividad: **2 horas**
-- Proceso de entrega:
-  1. Crear un Fork del proyect en tú cuenta de Github.
-  2. Crear una rama con tu solución.
-  3. A partir de esta rama, crear un Pull Request a la rama principal
-  4. Incluir en el README una explicación detallada de los aspectos que mejoraste en la aplicación
-
-## Criterios de Evaluación
-
-Se valorará especialmente:
-
-- La correcta implementación del patrón MVC
-- El uso adecuado de Riverpod para la gestión del estado
-- La separación de responsabilidades entre clases
-- La claridad y mantenibilidad del código resultante
+# ¿Que cambios concretos se hicieron?
+Se crearon clases especificas para los pokemon y sus detalles, toda la logica para comunicarse con la API se implemento en un solo lugar, separada del resto. Se crearon controladores con Riverpod para la lista y detalles de los pokemon, por último, se implementaron pantallas con vistas simples. 
