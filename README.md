@@ -17,7 +17,7 @@ La aplicación sigue el patrón Modelo-Vista-Controlador (MVC) y está organizad
 * **`repositories/`**: Contiene `pokemon_repository.dart`, encargado de la lógica para obtener datos de la PokeAPI. Esto asegura que la fuente de datos pueda cambiarse fácilmente sin afectar otras partes de la app.
 * **`providers/`**: Aquí se gestiona el estado de la aplicación usando Riverpod. Contiene:
     * Un `Provider` para el `PokemonRepository`.
-    * Un `StateNotifierProvider` con un `PokemonNotifier` que maneja la carga, el estado (cargando, con datos, error) y la lógica para obtener la lista de Pokémon y sus detalles (actualmente de forma secuencial).
+    * Un `StateNotifierProvider` con un `PokemonNotifier` que maneja la carga, el estado (cargando, con datos, error) y la lógica para obtener la lista de Pokémon y sus detalles.
     * Un `StateProvider` para gestionar el índice de la navegación inferior.
 * **`views/`**: Contiene los componentes de la interfaz de usuario. La `home_page.dart` es la vista principal, desacoplada y observando los `providers`. El widget `pokemon_list_item.dart` está separado para mostrar cada Pokémon en la lista.
 
