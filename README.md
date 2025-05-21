@@ -1,41 +1,37 @@
-# Taller Práctico Flutter - Pokemon
+Mejoras realizadas en la aplicación Pokémon Flutter
+Esta versión refactorizada de la aplicación original incorpora varias mejoras clave para hacerla más escalable, mantenible y alineada con las mejores prácticas modernas de Flutter.
 
-## Descripción
+1. Uso de Riverpod para gestión de estado
+Se implementó Riverpod como gestor de estado, mejorando la separación de responsabilidades y permitiendo un manejo reactivo y eficiente de los datos.
 
-En este repositorio encontrarás una solución que tiene un menú principal con 3 opciones:
+La lógica de consumo de la API y el estado de carga se maneja con providers y FutureProvider, simplificando el código de la interfaz.
 
-1. **Home**: Contiene una lista de personajes de Pokemon con vista detalle.
-2. **Mock**: Pantalla X.
-3. **Mock**: Pantalla X.
+2. Implementación del patrón MVC
+Se aplicó el patrón arquitectónico Modelo-Vista-Controlador (MVC) para organizar mejor el código:
 
-La funcionalidad principal está en la primera opción, donde se implementa una vista de lista-detalle que consume la API pública de Pokemon.
+Modelos: Se creó una clase Pokemon para representar los datos recibidos de la API.
 
-## Objetivo del Taller
+Controladores: La clase PokemonController se encarga de la lógica de negocio y de obtener los datos desde la API.
 
-Tu trabajo como experto en Flutter es aplicar las mejores prácticas de programación vistas en clase para convertir esta solución en una aplicación escalable y mantenible.
+Vistas: Widgets separados para las interfaces (HomePage, NavigationPage, pantallas mock).
 
-## Requisitos
+3. Separación clara de responsabilidades
+El código de la interfaz está limpio, sin lógica de negocio ni llamadas directas a la API.
 
-Para lograr este objetivo es indispensable que utilices:
+La navegación entre pantallas está centralizada en NavigationPage.
 
-- **Riverpod** como gestor de estado
-- El patrón arquitectónico **MVC** (Modelo-Vista-Controlador)
-- Una clara separación de responsabilidades entre las diferentes clases
+Cada widget tiene una única responsabilidad, facilitando su comprensión y mantenimiento.
 
-## Tiempo y Entrega
+4. Mejora en la experiencia de usuario
+Se utiliza un widget AlertDialog para mostrar detalles de cada Pokémon de forma limpia y sencilla.
 
-- Duración de la actividad: **2 horas**
-- Proceso de entrega:
-  1. Crear un Fork del proyect en tú cuenta de Github.
-  2. Crear una rama con tu solución.
-  3. A partir de esta rama, crear un Pull Request a la rama principal
-  4. Incluir en el README una explicación detallada de los aspectos que mejoraste en la aplicación
+La carga de datos muestra un CircularProgressIndicator mientras se obtienen los datos.
 
-## Criterios de Evaluación
+Botón de refrescar la lista implementado correctamente con Riverpod.
 
-Se valorará especialmente:
+5. Código limpio y documentación
+Uso correcto de const para mejorar el rendimiento.
 
-- La correcta implementación del patrón MVC
-- El uso adecuado de Riverpod para la gestión del estado
-- La separación de responsabilidades entre clases
-- La claridad y mantenibilidad del código resultante
+Eliminación de variables globales y estado mutable innecesario.
+
+Comentarios claros y organización en carpetas (models/, controllers/, views/, providers/).
