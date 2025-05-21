@@ -1,41 +1,54 @@
-# Taller Práctico Flutter - Pokemon
+# Pokémon App Mejorada
 
 ## Descripción
 
-En este repositorio encontrarás una solución que tiene un menú principal con 3 opciones:
+Esta aplicación consume la API pública de Pokémon para mostrar una lista de personajes con sus detalles. Se ha refactorizado el código original para aplicar buenas prácticas de desarrollo, mejorar la escalabilidad y la mantenibilidad.
 
-1. **Home**: Contiene una lista de personajes de Pokemon con vista detalle.
-2. **Mock**: Pantalla X.
-3. **Mock**: Pantalla X.
+---
 
-La funcionalidad principal está en la primera opción, donde se implementa una vista de lista-detalle que consume la API pública de Pokemon.
+## Mejoras realizadas
 
-## Objetivo del Taller
+### 1. Implementación del patrón MVC
 
-Tu trabajo como experto en Flutter es aplicar las mejores prácticas de programación vistas en clase para convertir esta solución en una aplicación escalable y mantenible.
+- **Modelo:** Se creó una clase `Pokemon` para representar la estructura de los datos obtenidos de la API.
+- **Controlador:** Se creó `PokemonController` para gestionar la lógica de negocio y las llamadas a la API.
+- **Vista:** La interfaz de usuario está claramente separada en pantallas y widgets reutilizables.
 
-## Requisitos
+### 2. Uso de Riverpod para la gestión del estado
 
-Para lograr este objetivo es indispensable que utilices:
+- Se utiliza `flutter_riverpod` para gestionar el estado de la aplicación de forma reactiva y eficiente.
+- La obtención de datos se maneja mediante un `FutureProvider`, mejorando la separación de responsabilidades y facilitando la prueba y mantenimiento.
 
-- **Riverpod** como gestor de estado
-- El patrón arquitectónico **MVC** (Modelo-Vista-Controlador)
-- Una clara separación de responsabilidades entre las diferentes clases
+### 3. Mejora en la experiencia de usuario
 
-## Tiempo y Entrega
+- La lista de Pokémon se muestra con tarjetas personalizadas (`PokemonTile`) que mejoran la estética y usabilidad.
+- El detalle de cada Pokémon se presenta en un diálogo modal centrado, con diseño moderno y estilizado.
+- Se añadieron degradados, sombras y colores contrastantes para mejorar la visualización y accesibilidad.
 
-- Duración de la actividad: **2 horas**
-- Proceso de entrega:
-  1. Crear un Fork del proyect en tú cuenta de Github.
-  2. Crear una rama con tu solución.
-  3. A partir de esta rama, crear un Pull Request a la rama principal
-  4. Incluir en el README una explicación detallada de los aspectos que mejoraste en la aplicación
+### 4. Limpieza y organización del código
 
-## Criterios de Evaluación
+- Se eliminaron variables globales y se evitaron malas prácticas como el uso de métodos muy largos o llamados directos a la API en el estado de la UI.
+- El código está modularizado en carpetas claras (`models`, `controllers`, `providers`, `views/widgets`) para facilitar su escalabilidad.
+- Se aplicaron estilos consistentes en toda la aplicación para una mejor apariencia visual.
 
-Se valorará especialmente:
+### 5. Manejo adecuado de pantallas en construcción
 
-- La correcta implementación del patrón MVC
-- El uso adecuado de Riverpod para la gestión del estado
-- La separación de responsabilidades entre clases
-- La claridad y mantenibilidad del código resultante
+- Las pestañas sin funcionalidad están indicadas con mensajes claros de “Pantalla en construcción” para mejorar la comunicación con el usuario.
+
+---
+
+## Tecnologías y librerías
+
+- Flutter SDK
+- Flutter Riverpod
+- HTTP para consumo de API REST
+
+---
+
+## Cómo ejecutar
+
+1. Clonar el repositorio.
+2. Ejecutar `flutter pub get` para instalar dependencias.
+3. Ejecutar `flutter run` para iniciar la aplicación en un emulador o dispositivo físico.
+
+---
