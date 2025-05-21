@@ -1,41 +1,32 @@
-# Taller Práctico Flutter - Pokemon
+Mejoras Realizadas
 
-## Descripción
+1. Uso de Riverpod
+- Implementamos Riverpod
+- Se creo un StateNotifierProvider que se encarga de manejar la lista de Pokemon
 
-En este repositorio encontrarás una solución que tiene un menú principal con 3 opciones:
 
-1. **Home**: Contiene una lista de personajes de Pokemon con vista detalle.
-2. **Mock**: Pantalla X.
-3. **Mock**: Pantalla X.
+2. Separación de responsabilidades
+- La logica para obtener los Pokomon y sus detalles se implemento en un Controller que gestiona las solicitudes HTTP
 
-La funcionalidad principal está en la primera opción, donde se implementa una vista de lista-detalle que consume la API pública de Pokemon.
 
-## Objetivo del Taller
+3. Uso eficiente de las API y manejo de datos
+- Se maneja la carga de datos de la API de Pokemon, utilizando el patron Future para hacer las solicitudes asincró
+onas
+- Se usan verificaciones de estado, para asegurarse de que los datos se carguen de buena manera antes de mostrarlos
 
-Tu trabajo como experto en Flutter es aplicar las mejores prácticas de programación vistas en clase para convertir esta solución en una aplicación escalable y mantenible.
 
-## Requisitos
+4. Estructura mas clara y manejable
+- La logica se separo en carpetas y archivos:
+controllers
+models
+providers
+views
 
-Para lograr este objetivo es indispensable que utilices:
 
-- **Riverpod** como gestor de estado
-- El patrón arquitectónico **MVC** (Modelo-Vista-Controlador)
-- Una clara separación de responsabilidades entre las diferentes clases
+5. Interfaz
+- La aplicacion meustra una lista de Pokemon con informacion de cada uno
 
-## Tiempo y Entrega
 
-- Duración de la actividad: **2 horas**
-- Proceso de entrega:
-  1. Crear un Fork del proyect en tú cuenta de Github.
-  2. Crear una rama con tu solución.
-  3. A partir de esta rama, crear un Pull Request a la rama principal
-  4. Incluir en el README una explicación detallada de los aspectos que mejoraste en la aplicación
-
-## Criterios de Evaluación
-
-Se valorará especialmente:
-
-- La correcta implementación del patrón MVC
-- El uso adecuado de Riverpod para la gestión del estado
-- La separación de responsabilidades entre clases
-- La claridad y mantenibilidad del código resultante
+6. Malas prácticas
+- El codigo ahora maneja la separacion de responsabilidades (SRP) y la gestion eficiente del estado con Riverpod
+- Se mejoro el manejo de errores y se limpio la estructura general para facilitar el mantenimiento
